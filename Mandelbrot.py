@@ -17,6 +17,20 @@ def isStable(c, numItr):
         z = z ** 2 + c
     return abs(z) <= 2
 
+#-=Graphing=-
+
+#Displays values only in the mandelbrot set
+def getMembers(c, numItr):
+    mask = isStable(c, numItr)
+    return c[mask]
+
+#plots image of Mandelbrot Set
+c = complex_matrix(-2, 0.5, -1.5, 1.5, pixel_density=1024)
+plt.imshow(isStable(c, numItr = 20), cmap = 'binary')
+plt.gca().set_aspect("equal")
+plt.axis("off")
+plt.tight_layout()
+plt.show()
 
 
 #Testing Mandelbrot set
