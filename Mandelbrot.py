@@ -25,7 +25,7 @@ def getMembers(c, numItr):
     return c[mask]
 
 #plots image of Mandelbrot Set
-c = complex_matrix(-2, 0.5, -1.5, 1.5, pixel_density=1024)
+c = complex_matrix(-2, 0.5, -1.5, 1.5, pixel_density=4096)
 plt.imshow(isStable(c, numItr = 20), cmap = 'binary')
 plt.gca().set_aspect("equal")
 plt.axis("off")
